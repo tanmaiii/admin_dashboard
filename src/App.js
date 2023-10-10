@@ -1,23 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+import './assets/libs/boxicons-2.1.4/css/boxicons.min.css'
+import Layout from "./layout/Layout";
+import { BrowserRouter, Route, Router, Routes } from "react-router-dom";
+import Dashboard from "./pages/dashboard/Dashboard";
+import Customers from "./pages/customers/Customers";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Layout />}>
+            <Route index element={<Dashboard />} />
+            <Route path="customers" element={<Customers />} />
+            <Route path="orders" element={<Customers />} />
+            <Route path="products" element={<Customers />} />
+            <Route path="settings" element={<Customers />} />
+            <Route path="stats" element={<Customers />} />
+          </Route>
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }

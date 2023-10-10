@@ -1,0 +1,17 @@
+@use '../scss/' as *;
+
+.layout {
+  color: var(--txt-color);
+  .layout__main {
+    padding-left: $sideBarWidth;
+    overflow-y: hidden;
+    min-height: 100vh;
+    @include tablet{
+        padding-left: 0;
+        width: 100vw;
+    }
+    .layout__main-content {
+      padding: 30px;
+    }
+  }
+}

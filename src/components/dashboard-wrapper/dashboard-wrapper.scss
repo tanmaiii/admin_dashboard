@@ -1,0 +1,21 @@
+@use '../../scss/' as *;
+
+.dashboard-wrapper{
+    @include flex(stretch, unset);
+
+    &__main{
+        flex-grow: 1;
+        padding-right: $sideBarWidth;
+    }
+    &__right{
+        width: $sideBarWidth;
+        background-color: $mainBg;
+        height: 100vh;
+        padding: $spacing;
+        border-top-left-radius: $borderRadius;
+        border-bottom-left-radius: $borderRadius;
+        position: fixed;
+        top: 0;
+        right: 0;
+    }
+}

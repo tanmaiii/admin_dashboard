@@ -1,0 +1,55 @@
+@use "../../scss/" as *;
+
+.topnav {
+  @include flex(center, space-between);
+  margin-bottom: $spacing;
+
+  @include tablet {
+    padding: $mobileSpacing;
+  }
+
+  &__userInfo {
+    @include flex(center, flex-start);
+    background-color: $mainBg;
+    border-radius: $borderRadius;
+    height: 50px;
+    width: max-content;
+
+    &-img {
+      --size: 50px;
+      width: var(--size);
+      height: var(--size);
+      border-radius: $borderRadius;
+      overflow: hidden;
+      img {
+        border-radius: $borderRadius;
+      }
+    }
+    &-name {
+      padding: 0 $spacing;
+      font-size: $fontSizeMedium;
+      font-weight: 700;
+      @include tablet {
+        padding: 0 $mobileSpacing;
+      }
+    }
+  }
+
+  .sidebar-toggle{
+    --size: 40px;
+    width: var(--size);
+    height: var(--size);
+    @include flex(center, center);
+    cursor: pointer;
+    display: none;
+
+    @include tablet{
+        display: flex;
+    }
+
+    i{
+        font-size: 3rem;
+        color: $mainColor;
+    }
+  }
+}
