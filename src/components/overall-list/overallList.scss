@@ -1,0 +1,29 @@
+@use "../../scss/" as *;
+@use "sass:math";
+
+.overall-list {
+  & > * ~ * {
+    margin-top: math.div($spacing, 6);
+  }
+  &__item {
+    @include flex(center, flex-start);
+    &__icon {
+      @include flex(center, center);
+      border-radius: 50%;
+      background-color: $bodyBg;
+      margin-right: $spacing;
+      i {
+        @include flex(center, center);
+        --size: 50px;
+        width: var(--size);
+        height: var(--size);
+        font-size: 1.9rem;
+        color: $black;
+      }
+    }
+    &__info {
+      @include flex(flex-start, space-between);
+      flex-direction: column;
+    }
+  }
+}

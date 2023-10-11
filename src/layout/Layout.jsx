@@ -5,6 +5,7 @@ import TopNav from '../components/topNav/TopNav'
 
 import './layout.scss'
 
+
 export default function Layout() {
   return (
       <div className="layout">

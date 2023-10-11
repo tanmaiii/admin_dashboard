@@ -4,14 +4,31 @@
   color: var(--txt-color);
   .layout__main {
     padding-left: $sideBarWidth;
-    overflow-y: hidden;
+    overflow-x: hidden;
     min-height: 100vh;
     @include tablet{
         padding-left: 0;
         width: 100vw;
     }
     .layout__main-content {
-      padding: 30px;
+      min-height: 100vh;
+      padding: $spacing;
+      transition: all .5s;
+      @include tablet{
+        padding: $mobileSpacing;
+        position: relative;
+        background-color: $bodyBg;
+        z-index: 100;
+      }
     }
   }
+}
+
+.sidebar-open .layout__main-content {
+  height: 100vh;
+  overflow: hidden;
+  border-top-left-radius: 30px;
+  border-bottom-left-radius: 30px;
+  transform: scale(0.8) translateX(50%);
+  transition: all 0.5s ease-in-out;
 }

@@ -1,5 +1,5 @@
 @use "../../scss/" as *;
-@use 'sass:math';
+@use "sass:math";
 
 .sidebar {
   min-width: $sideBarWidth;
@@ -9,21 +9,42 @@
   left: 0;
   background-color: $mainBg;
   box-shadow: $box-shadow;
+  z-index: 100;
+
+  @include tablet {
+    width: 100vw;
+    background-color: $mainColor;
+    color: $white;
+    z-index: 1;
+  }
+
   &__logo {
     @include flex(center, center);
     height: $sideBarLogoHeight;
-  
-    @include tablet {  
-        justify-content: space-between;
-        height: math.div($sideBarLogoHeight, 1.8);
-        padding: 0 $mobileSpacing;
-        margin-bottom: $mobileSpacing;
+
+    @include tablet {
+      justify-content: space-between;
+      height: math.div($sideBarLogoHeight, 1.8);
+      padding: 0 $mobileSpacing;
+      margin-bottom: $mobileSpacing;
     }
+
     img {
       width: 55px;
       height: 55px;
       object-fit: cover;
       cursor: pointer;
+    }
+
+    .sidebar-close {
+      cursor: pointer;
+      display: none;
+      i {
+        font-size: 3.4rem;
+      }
+      @include tablet {
+        display: block;
+      }
     }
   }
   &__menu {
@@ -40,6 +61,10 @@
       transition: all 0.3s;
       cursor: pointer;
 
+      @include tablet {
+        padding-left: $mobileSpacing;
+      }
+
       &:last-child {
         margin-top: auto;
         cursor: pointer;
@@ -47,10 +72,16 @@
 
       &:hover {
         color: $mainColor;
+        @include tablet {
+          color: $orange;
+        }
       }
       &.active {
         font-weight: 500;
         color: $mainColor;
+        @include tablet {
+          color: $orange;
+        }
         &::before {
           content: "";
           position: absolute;
@@ -61,6 +92,9 @@
           background-color: $mainColor;
           border-top-right-radius: 20px;
           border-bottom-right-radius: 20px;
+          @include tablet {
+            margin-right: 1rem;
+          }
         }
       }
       &__icon {

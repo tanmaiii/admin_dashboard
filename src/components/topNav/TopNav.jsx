@@ -3,6 +3,10 @@ import './topNav.scss'
 import avt from '../../assets/images/avt.jpg'
 
 export default function TopNav({user}) {
+
+  const openSidebar = () => {
+    document.body.classList.add('sidebar-open')
+  }
   return (
     <div className='topnav'>
       <div className="topnav__userInfo">
@@ -13,7 +17,7 @@ export default function TopNav({user}) {
             <span>Tan Mai</span>
           </div>
       </div>
-      <div className='sidebar-toggle'>
+      <div className='sidebar-toggle' onClick={openSidebar}>
          <i className='bx bx-menu-alt-right'></i>
       </div>
     </div>

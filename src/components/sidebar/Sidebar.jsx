@@ -19,10 +19,23 @@ export default function Sidebar() {
     setActiveIndex(curPath.length === 0 ? 0 : activeItem)
   }, [location]);
 
+  const closeSidebar = () =>{
+      document.querySelector(".layout__main-content").style.transform = 'scale(1) translateX(0)'
+      setTimeout(() => {
+        document.body.classList.remove('sidebar-open')
+        document.querySelector('.layout__main-content').style = ''
+      },500)
+
+      console.log(document.querySelector(".layout__main-content"));
+  }
+
   return (
     <div className="sidebar">
       <div className="sidebar__logo">
         <img src={logo} alt="" />
+        <div className="sidebar-close" onClick={closeSidebar}>
+          <i className="bx bx-x"></i>
+        </div>
       </div>
       <div className="sidebar__menu">
         {sidbarNav?.map((item, i) => (
