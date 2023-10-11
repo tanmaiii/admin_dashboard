@@ -41,39 +41,43 @@ ChartJS.register(
 export default function Dashboard() {
   return (
     <DashboardWrapper>
-      <DashboardWrapperMain>
-        <div className="row">
-          <div className="col-8 col-md-12">
-            <div className="row">
-              {data.summary.map((item, i) => (
-                <div key={i} className="col-6 col-md-6 col-sm-12 mb">
-                  <SummaryBox item={item} />
-                </div>
-              ))}
+      <div className="col pc-9 t-12 m-0">
+        <DashboardWrapperMain>
+          <div className="row">
+            <div className="col pc-8 t-12 m-12">
+              <div className="row">
+                {data.summary.map((item, i) => (
+                  <div key={i} className="col pc-6 t-6 m-12 mb">
+                    <SummaryBox item={item} />
+                  </div>
+                ))}
+              </div>
+            </div>
+            <div className="col pc-4 t-12 m-12">
+              <SummaryBoxSpecial item={data.revenueSummary} />
             </div>
           </div>
-          <div className="col-4 hide-md">
-            <SummaryBoxSpecial item={data.revenueSummary} />
+          <div className="row">
+            <div className="col pc-12 t-12 m-12">
+              <Box>
+                <RevenueByMonthsChart />
+              </Box>
+            </div>
           </div>
-        </div>
-        <div className="row">
-          <div className="col-12">
-            <Box>
-              <RevenueByMonthsChart />
-            </Box>
+        </DashboardWrapperMain>
+      </div>
+      <div className="col pc-3 t-0 m-0">
+        <DashboardWrapperRight>
+          <div className="title">Overall</div>
+          <div className="mb">
+            <OverallList />
           </div>
-        </div>
-      </DashboardWrapperMain>
-      <DashboardWrapperRight>
-        <div className="title mb">Overall</div>
-        <div className="mb">
-          <OverallList />
-        </div>
-        <div className="title mb">Revenue by channel</div>
-        <div className="mb">
-          <RevenueList/>
-        </div>
-      </DashboardWrapperRight>
+          <div className="title">Revenue by channel</div>
+          <div className="mb">
+            <RevenueList />
+          </div>
+        </DashboardWrapperRight>
+      </div>
     </DashboardWrapper>
   );
 }

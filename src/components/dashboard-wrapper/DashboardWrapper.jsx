@@ -3,7 +3,7 @@ import './dashboard-wrapper.scss'
 
 const DashboardWrapper= props => {
   return (
-    <div className='dashboard-wrapper'>
+    <div className='dashboard-wrapper row'>
         {props.children}
     </div>
   )

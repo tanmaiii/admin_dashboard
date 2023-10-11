@@ -1,0 +1,38 @@
+@use "../../scss/" as *;
+
+.table {
+  width: 100%;
+  min-width: 400px;
+  border-radius: $borderRadius;
+  overflow-y: auto;
+  background-color: $mainBg;
+  padding: $spacing;
+  overflow: hidden;
+  table {
+    width: 100%;
+    border-spacing: 0;
+    thead {
+      tr {
+        th {
+          text-transform: capitalize;
+          padding: 15px 10px;
+          text-align: left;
+          font-weight: 600;
+        }
+      }
+    }
+    tbody {
+      tr {
+        td {
+          cursor: pointer;
+          text-align: left;
+          padding: 10px;
+        }
+        &:hover {
+          background-color: $mainColor;
+          color: $white;
+        }
+      }
+    }
+  }
+}
