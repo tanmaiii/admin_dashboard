@@ -1,0 +1,46 @@
+@use "../../scss/" as *;
+
+.summary-box {
+  @include flex(stretch, flex-start);
+
+  &__info {
+    width: 60%;
+    &__title {
+      font-size: $fontSizeMedium;
+      line-height: 1.2;
+      font-weight: 700;
+      span {
+        font-size: 13px;
+        font-weight: 400;
+      }
+    }
+    &__value {
+      font-weight: 700;
+      font-size: $fontSizeLarge;
+      color: $black;
+    }
+  }
+  &__chart {
+    width: 40%;
+    &__value {
+        margin-top: -30%;
+        font-weight: 700;
+      }
+  }
+}
+
+.summary-box-special{
+    @include flex(center, space-between);
+    flex-direction: column;
+    height: 100%;
+    &__title{
+        font-weight: 700;
+        font-size: $fontSizeMedium;
+    }
+    &__value{
+        font-weight: 700;
+        font-size: $fontSizeLarge;
+    }
+    &__chart{
+    }
+}

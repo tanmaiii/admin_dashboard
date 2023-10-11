@@ -1,4 +1,5 @@
 import React from "react";
+import './box.scss'
 
 export default function Box(props){
 
