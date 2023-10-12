@@ -8,6 +8,12 @@
   background-color: $mainBg;
   padding: $spacing;
   overflow: hidden;
+  margin-bottom: $spacing;
+
+  @include tablet{
+  padding: $mobileSpacing;
+    overflow-y: auto;
+  }
   table {
     width: 100%;
     border-spacing: 0;
@@ -18,8 +24,17 @@
           padding: 15px 10px;
           text-align: left;
           font-weight: 600;
+          @include tablet{
+            padding: 4px;
+            &:nth-child(7),&:nth-child(6) {
+              display: none;
+            }
+          }
+
+         
         }
       }
+     
     }
     tbody {
       tr {
@@ -27,11 +42,49 @@
           cursor: pointer;
           text-align: left;
           padding: 10px;
+
+          @include tablet{
+            padding: 4px;
+            &:nth-child(7),&:nth-child(6) {
+              display: none;
+            }
+          }
         }
         &:hover {
           background-color: $mainColor;
           color: $white;
         }
+      }
+    }
+  }
+
+  &__pagination {
+    @include flex(center, end);
+    gap: 10px;
+    &-item {
+      --size: 40px;
+      width: var(--size);
+      height: var(--size);
+      @include flex(center, center);
+      padding: 10px;
+      line-height: 1;
+      background-color: $mainBg;
+      border-radius: 50%;
+      cursor: pointer;
+      transition: all .3s;
+
+      -webkit-user-select: none; /* Safari */
+      -ms-user-select: none; /* IE 10 and IE 11 */
+      user-select: none; /* Standard syntax */
+
+      &:hover{
+        background-color: $mainColor;
+        color: $white;
+      }
+
+      &.active{
+        background-color: $mainColor;
+        color: $white;
       }
     }
   }

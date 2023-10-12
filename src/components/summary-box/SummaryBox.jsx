@@ -45,7 +45,7 @@ export default function SummaryBox({ item }) {
             value={item.percent}
             strokeWidth={10}
             styles={buildStyles({
-              pathColor: item.percent < 50 ? colors.red : colors.purple,
+              pathColor: item.percent < 50 ? colors.red : colors.blue,
               trailColor: "transparent",
               strokeLinecap: "round",
             })}

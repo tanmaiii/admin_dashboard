@@ -36,7 +36,7 @@ export default function Customers() {
       </div>
       <div className="customers__body">
         <div className="row">
-          <div className="col pc-12">
+          <div className="col pc-12 t-12 m-12">
             <div className="customers__body-card">
               <Table
                 limit={10}

@@ -41,7 +41,7 @@ ChartJS.register(
 export default function Dashboard() {
   return (
     <DashboardWrapper>
-      <div className="col pc-9 t-12 m-0">
+      <div className="col pc-9 t-12 m-12">
         <DashboardWrapperMain>
           <div className="row">
             <div className="col pc-8 t-12 m-12">
@@ -58,15 +58,15 @@ export default function Dashboard() {
             </div>
           </div>
           <div className="row">
-            <div className="col pc-12 t-12 m-12">
+            <div className="col pc-12 t-12 m-12 mb">
               <Box>
                 <RevenueByMonthsChart />
               </Box>
             </div>
           </div>
         </DashboardWrapperMain>
-      </div>
-      <div className="col pc-3 t-0 m-0">
+      </div> 
+      <div className="col pc-3 t-0 m-12 mb">
         <DashboardWrapperRight>
           <div className="title">Overall</div>
           <div className="mb">
@@ -110,7 +110,7 @@ const RevenueByMonthsChart = () => {
     },
     elements: {
       bar: {
-        backgroundColor: colors.orange,
+        backgroundColor: colors.red,
         borderRadius: 20,
         borderSkipped: "bottom",
       },
