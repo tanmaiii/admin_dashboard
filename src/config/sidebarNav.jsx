@@ -6,16 +6,16 @@ const  sidebarNav = [
         text: 'Home'
     },
     {
+        link: '/posts',
+        section: 'posts',
+        icon: <i className='bx bx-news'></i>,
+        text: 'Posts'
+    },
+    {
         link: '/orders',
         section: 'orders',
         icon: <i className='bx bx-receipt' ></i>,
         text: 'Orders'
-    },
-    {
-        link: '/products',
-        section: 'products',
-        icon: <i className='bx bx-cube'></i>,
-        text: 'Products'
     },
     {
         link: '/customers',

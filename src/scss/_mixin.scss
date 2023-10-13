@@ -55,3 +55,46 @@
 @mixin overlay {
   background-color: rgba($color: #000000, $alpha: 0.6);
 }
+
+
+@mixin text($line) {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: $line;
+  -webkit-box-orient: vertical;
+}
+
+
+@mixin button($color, $bg) {
+  padding: 10px 20px;
+  background-color: $bg;
+  color: $color;
+  font-weight: 500;
+  border: 2px solid $bg;
+  border-radius: 10px;
+  font-size: $fontSizeNormal;
+  cursor: pointer;
+  transition: all 0.3s;
+  @include flex(center, center);
+  &:hover {
+    background-color: transparent;
+    color: $bg;
+  }
+}
+
+@mixin button-line($color, $bg) {
+  padding: 10px 20px;
+  background-color: transparent;
+  color: $color;
+  font-weight: 500;
+  border: 2px solid $color;
+  border-radius: 10px;
+  font-size: $fontSizeNormal;
+  cursor: pointer;
+  transition: all 0.3s;
+  &:hover {
+    background-color: $color;
+    color: $bg;
+  }
+}
