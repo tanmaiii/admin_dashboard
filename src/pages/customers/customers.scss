@@ -3,6 +3,23 @@
 
 .customers{
     &__header{
+        @include flex(center, space-between);
+        &__search{
+            @include flex(center, center);
+            background-color: $mainBg;
+            padding: 16px 20px;
+            border-radius: $borderRadius;
+            gap: 8px;
+            i{
+                --size: 20px;
+                width: var(--size);
+                height: var(--size);
+                font-size: 1.4rem;
+            }
+            input{
+                font-size: $fontSizeNormal;
+            }
+        }
     }
     &__body{}
 }

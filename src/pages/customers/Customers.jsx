@@ -2,7 +2,7 @@ import React from "react";
 import Table from "../../components/table/Table";
 import { customersData } from "../../constants";
 
-import './customers.scss'
+import "./customers.scss";
 
 const customerTableHead = [
   "",
@@ -33,6 +33,10 @@ export default function Customers() {
     <div className="customers">
       <div className="customers__header mb">
         <h2>Customers</h2>
+        <div className="customers__header__search">
+          <i className="bx bx-search-alt-2"></i>
+          <input type="text" placeholder="Enter your keyword"/>
+        </div>
       </div>
       <div className="customers__body">
         <div className="row">
